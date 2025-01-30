@@ -1,0 +1,48 @@
+.contact {
+  width: 320px;
+  border: 2px solid #212121;
+  border-radius: 15px;
+  background-color: rgb(234, 228, 228);
+  padding: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 50px;
+  justify-content: space-around;
+}
+
+.contact_name {
+  font-family: "Roboto", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+.contact_number {
+  font-family: "Roboto", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
+.contact_svg {
+  margin-right: 5px;
+}
+
+.contact_btn {
+  width: 80px;
+  height: 35px;
+  background-color: #ff6666;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 16px;
+}
+
+.contact_btn:hover {
+  background-color: #ff3333;
+}
