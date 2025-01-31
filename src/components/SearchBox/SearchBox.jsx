@@ -1,5 +1,5 @@
 import s from "../SearchBox/SearchBox.module.css";
-const SearchBox = ({ value, filterContacts }) => {
+const SearchBox = ({ value, setSearchValue }) => {
   return (
     <div>
       <p className={s.text}>Find contacts by name</p>
@@ -7,9 +7,10 @@ const SearchBox = ({ value, filterContacts }) => {
         className={s.input}
         type="text"
         value={value}
-        onChange={() => filterContacts}
+        onChange={(e) => setSearchValue(e.target.value)}
       />
     </div>
   );
 };
+
 export default SearchBox;

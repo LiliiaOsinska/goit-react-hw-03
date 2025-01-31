@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { useId } from "react";
 import { nanoid } from "nanoid";
+import PropTypes from "prop-types";
 
 // Валідація
 const ContactFormSchema = Yup.object().shape({
@@ -34,7 +35,7 @@ const ContactForm = ({ addContact }) => {
   const handleSubmit = (values, actions) => {
     values.id = nanoid();
     addContact(values);
-    console.log(values);
+    // console.log(values);
     actions.resetForm();
   };
   return (
@@ -84,6 +85,10 @@ const ContactForm = ({ addContact }) => {
       </Formik>
     </div>
   );
+};
+
+ContactForm.propTypes = {
+  addContact: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

@@ -1,7 +1,7 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdContact } from "react-icons/io";
 import s from "../Contact/Contact.module.css";
-import PropTypes from "prop-types";
+
 const Contact = ({ name, number, id, handleDelete }) => {
   return (
     <div className={s.contact}>
@@ -22,10 +22,3 @@ const Contact = ({ name, number, id, handleDelete }) => {
   );
 };
 export default Contact;
-
-Contact.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  handleDelete: PropTypes.func.isRequired,
-};

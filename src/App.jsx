@@ -21,12 +21,15 @@ export default function App() {
     const newContacts = cont.filter((cont) => cont.id !== id);
     setCont(newContacts);
   };
-
+  // Фільтрований масив
   const filterContacts = cont.filter((contact) =>
     contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
+  // Створення нового контакту
   const addContact = (newContact) => {
-    setCont((cont) => [...cont], newContact);
+    // console.log(newContact);
+
+    setCont((cont) => [...cont, newContact]);
   };
 
   return (
