@@ -1,8 +1,8 @@
 import s from "../SearchBox/SearchBox.module.css";
-const SearchBox = (value, filterContacts) => {
+const SearchBox = ({ value, filterContacts }) => {
   return (
     <div>
-      <p>Find contacts by name</p>
+      <p className={s.text}>Find contacts by name</p>
       <input
         className={s.input}
         type="text"

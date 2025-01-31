@@ -4,23 +4,30 @@ import SearchBox from "./components/SearchBox/SearchBox.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import s from "../src/App.module.css";
 import { useState } from "react";
-
+import { useEffect } from "react";
 export default function App() {
-  const [cont, setCont] = useState(contacts);
+  const [cont, setCont] = useState(
+    () => JSON.parse(localStorage.getItem("userContact")) ?? contacts
+  );
+  // Запис елемента в localStorage
+  useEffect(() => {
+    localStorage.setItem("userContact", JSON.stringify(cont));
+  }, [cont]);
 
   const [searchValue, setSearchValue] = useState("");
 
+  // Видалення елемента
   const handleDelete = (id) => {
-    const newContacts = contacts.filter((cont) => cont.id !== id);
+    const newContacts = cont.filter((cont) => cont.id !== id);
     setCont(newContacts);
-
-    console.log(newContacts);
   };
 
-  const filterContacts = contacts.filter((contact) =>
+  const filterContacts = cont.filter((contact) =>
     contact.name.toLowerCase().includes(searchValue.toLowerCase())
   );
-  const addContact = () => {};
+  const addContact = (newContact) => {
+    setCont((cont) => [...cont], newContact);
+  };
 
   return (
     <div>

@@ -1,3 +1,10 @@
+.text {
+  font-family: "Roboto", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
+}
+
 .input {
   width: 320px;
   height: 40px;
@@ -6,4 +13,8 @@
   background-color: rgb(234, 228, 228);
   padding: 5px;
   margin: 10px;
+  font-family: "Roboto", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #000;
 }

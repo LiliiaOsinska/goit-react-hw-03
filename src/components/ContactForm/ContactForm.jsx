@@ -21,6 +21,7 @@ const ContactFormSchema = Yup.object().shape({
 });
 
 const ContactForm = ({ addContact }) => {
+  // Початкове значення полів форми
   const initialValues = {
     name: "",
     number: "",
@@ -32,10 +33,8 @@ const ContactForm = ({ addContact }) => {
 
   const handleSubmit = (values, actions) => {
     values.id = nanoid();
-    addContact({});
+    addContact(values);
     console.log(values);
-    console.log(values.id);
-
     actions.resetForm();
   };
   return (
@@ -77,7 +76,7 @@ const ContactForm = ({ addContact }) => {
                 component="span"
               />
             </div>
-            <button className={s.form_btn} type="submit">
+            <button onSubmit={() => {}} className={s.form_btn} type="submit">
               Add contact
             </button>
           </Form>
